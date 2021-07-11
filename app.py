@@ -6,8 +6,8 @@ lugar = input("Informe o local desejado: ")
 data = input("Informe a data (AA-MM-DD): ")
 options = webdriver.ChromeOptions()
 options.add_argument('lang=pt-br')
-options.binary_location=r'C:/Program Files/Google/Chrome/Application'
-driver = webdriver.Chrome(executable_path=r'C:/Users/User/Desktop/CD/chromedriver.exe')
+options.binary_location=r'Path/To/Your/Chrome/Application'
+driver = webdriver.Chrome(executable_path=r'Path/To/Your/chromedriver.exe')
 driver.get("http://www.proeis.rj.gov.br/")
 def marcar():
 
@@ -19,10 +19,8 @@ def marcar():
     time.sleep(0.3)
     c = driver.find_element_by_xpath(f"//*[text()='{lugar}']")
     c.click()
-    
     pyautogui.press('tab')
     pyautogui.press('enter')
-
     d = driver.find_element_by_xpath(f"//*[text()='{data}']")
     d.click()
     time.sleep(0.3)
